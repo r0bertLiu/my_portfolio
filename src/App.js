@@ -6,7 +6,11 @@ import Header from './components/header';
 
 function App() {
   return (
-    <Header/>
+    <>
+      <Header/>
+      <section id="div1">TEST 1</section>
+      <section id="div2">TEST 2</section>
+    </>
   );
 }
 
