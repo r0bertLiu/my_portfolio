@@ -4,8 +4,9 @@ import { Navbar, Nav, Container} from 'react-bootstrap';
 
 class ToggleIcon extends React.Component {
   render() {
+    let _tail = (this.props.class === "material-icons-outlined")? "" : " myIcon";
     return (
-      <i className={this.props.class} >
+      <i className={this.props.class + _tail} >
         {this.props.value}
       </i>
     );
@@ -30,15 +31,15 @@ class Header extends React.Component {
     window.scrollTo(0, y);
 
     // change toggle status as the menu close by default
-    let toggleStatus = this.state.toggleExpand ? false : true;
     this.setState({
-      toggleExpand: toggleStatus,
+      toggleExpand: false,
     });
   };
 
   handleDarkToggleClick = () => {
     let darkModeStatus = this.state.darkMode ? false : true;
     this.setState({
+      toggleExpand: false,
       darkMode: darkModeStatus,
     });
     const navBar = document.querySelector('.navbar');
@@ -48,6 +49,7 @@ class Header extends React.Component {
 
     document.querySelectorAll(".bgClass1").forEach(element => element.classList.toggle("DarkbgClass1"));
     document.querySelectorAll(".bgClass2").forEach(element => element.classList.toggle("DarkbgClass2"));
+    document.querySelectorAll(".myIcon").forEach(element => element.classList.toggle("myIconDarkMode"));
   };
 
   renderToggleIcon() {

@@ -6,10 +6,10 @@ class Home extends React.Component {
     return (
       <Container>
         <Row>
-        <Col md={4}>
+        <Col lg={4}>
           <h1>Home</h1>
         </Col>
-        <Col md={8}>md=4</Col>
+        <Col lg={8}>md=4</Col>
         </Row>
       </Container>
     );

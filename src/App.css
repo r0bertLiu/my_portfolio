@@ -2,17 +2,83 @@ html {
   scroll-behavior: smooth;
 }
 
-
-/********************** heading **********************/
-
-h1 {
-  font-size: 2.25rem;
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
+
+ul li {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+
+/********************* responsive *********************/
+
+@media (min-width: 768px){ 
+  h1{
+    font-size: 2.5rem;
+  }
+
+  h2{
+    font-size: 1.25rem;
+  }
+
+  h3{
+    font-size: 1rem;
+  }
+
+  body {
+    font-size: 1rem;
+  }
+
+  .contact-ul {
+    font-size: 1.25rem;
+  }
+
+  .large-icon {
+    font-size: 2rem;
+  }
+
+}
+
+/* Extra small devices */
+@media (max-width: 767.98px) { 
+  h1{
+    font-size: 2rem;
+  }
+
+  h2{
+    font-size: 1rem;
+  }
+
+  h3{
+    font-size: 0.75rem;
+  }
+
+  body {
+    font-size: 0.75rem;
+  }
+
+  .large-icon {
+    font-size: 1.5rem;
+  }
+
+  .contact-ul {
+    font-size: 1rem;
+  }
+
+  .container {
+    width: 80%;
+  }
+
+}
+
 
 /********************* container *********************/
 
 .container {
-  width: 80%;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
@@ -21,8 +87,9 @@ h1 {
 
 /************************ Nav ************************/
 .navbar {
-  padding: 0rem 2rem;
+  /* padding: 0rem 2rem; */
   transition: .5s background ease;
+  font-size: 1rem;
 }
 
 .navbarBorder-light {
@@ -35,7 +102,7 @@ h1 {
 
 /********************** sections **********************/
 .mySection {
-  padding: 5rem;
+  padding: 5rem 0rem;
   transition: .5s background ease;
 }
 
@@ -86,4 +153,17 @@ footer {
   cursor:pointer;
   overflow: hidden;
   outline:none;
+}
+
+/*********************** icon ***********************/
+.myIcon{
+  color: black;
+}
+
+.myIconDarkMode{
+  color: white;
+}
+
+.large-icon {
+  margin-right: 30px;
 }
