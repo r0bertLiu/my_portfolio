@@ -1,17 +1,27 @@
 import React from 'react';
-import {Container, Row, Col} from 'react-bootstrap';
+import SectionTemplate from './sectionTemplate';
 
 class About extends React.Component {
+  renderLeftSection() {
+    return (
+      <div id ="profile">
+        <img src="/img/Avatar.jpg" alt="Avatar"></img>
+        <h2>Yubai Liu/Robert</h2>
+      </div>
+    );
+  }
+
+  renderightSection() {
+    return (
+      <div id="profileText">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </div>
+    );
+  }
+
   render() {
     return (
-      <Container>
-        <Row>
-        <Col lg={4}>
-          <h1>About</h1>
-        </Col>
-        <Col lg={8}>md=4</Col>
-        </Row>
-      </Container>
+      <SectionTemplate leftsection={this.renderLeftSection()} rightsection={this.renderightSection()} />
     );
   }
 }

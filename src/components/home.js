@@ -1,17 +1,18 @@
 import React from 'react';
-import {Container, Row, Col} from 'react-bootstrap';
+import SectionTemplate from './sectionTemplate';
 
 class Home extends React.Component {
+  renderLeftSection() {
+    return <h1>Home</h1>;
+  }
+
+  renderightSection() {
+    return ("md=4");
+  }
+
   render() {
     return (
-      <Container>
-        <Row>
-        <Col lg={4}>
-          <h1>Home</h1>
-        </Col>
-        <Col lg={8}>md=4</Col>
-        </Row>
-      </Container>
+      <SectionTemplate leftsection={this.renderLeftSection()} rightsection={this.renderightSection()} />
     );
   }
 }
