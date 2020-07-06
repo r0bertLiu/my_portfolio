@@ -1,18 +1,35 @@
 import React from 'react';
-import SectionTemplate from './sectionTemplate';
 
 class Home extends React.Component {
-  renderLeftSection() {
-    return <h1>Home</h1>;
-  }
+  renderAnimationText() {
+    let letters = "WELCOME".split("");
+    console.log(letters)
+    return (
+      <div id="textAnimation">
+        {letters.map((letter, i) => {
+          let delay = 0.3 + Math.abs(i - 3) * 0.1;
+          const divStyle = {
+            animationDelay: `${delay}s`,
+          };
+          return <span style={divStyle}>{letter}</span>;
+        })}
 
-  renderightSection() {
-    return ("md=4");
+        {/* <span style={{animationDelay: '0.6s'}}>W</span>
+        <span style={{animationDelay: '0.5s'}}>E</span>
+        <span style={{animationDelay: '0.4s'}}>L</span>
+        <span style={{animationDelay: '0.3s'}}>C</span>
+        <span style={{animationDelay: '0.4s'}}>O</span>
+        <span style={{animationDelay: '0.5s'}}>M</span>
+        <span style={{animationDelay: '0.6s'}}>E</span> */}
+      </div>
+    );
   }
 
   render() {
     return (
-      <SectionTemplate leftsection={this.renderLeftSection()} rightsection={this.renderightSection()} />
+      <div id="homeCover">
+        {this.renderAnimationText()}
+      </div>
     );
   }
 }

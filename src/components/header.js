@@ -50,6 +50,8 @@ class Header extends React.Component {
     document.querySelectorAll(".bgClass1").forEach(element => element.classList.toggle("DarkbgClass1"));
     document.querySelectorAll(".bgClass2").forEach(element => element.classList.toggle("DarkbgClass2"));
     document.querySelectorAll(".myIcon").forEach(element => element.classList.toggle("myIconDarkMode"));
+    document.querySelectorAll(".myCard").forEach(element => element.classList.toggle("myCardDark"));
+    document.querySelectorAll(".card-footer").forEach(element => element.classList.toggle("card-footerDark"));
   };
 
   renderToggleIcon() {

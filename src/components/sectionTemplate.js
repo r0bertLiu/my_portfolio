@@ -3,7 +3,6 @@ import {Container, Row, Col} from 'react-bootstrap';
 
 class SectionTemplate extends React.Component {
   render() {
-
     return (
       <Container>
         <Row>
