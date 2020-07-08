@@ -2,7 +2,6 @@ html {
   scroll-behavior: smooth;
 }
 
-
 ul {
   list-style-type: none;
   margin: 0 auto;
@@ -34,7 +33,7 @@ h1 {
 }
 
 /* sm */
-@media (min-width: 768px){ 
+@media (min-width: 576px){ 
   h1{
     font-size: 2.5rem;
   }
@@ -62,7 +61,7 @@ h1 {
 }
 
 /* Extra sm  */
-@media (max-width: 767.98px) { 
+@media (max-width: 575.98px) { 
   h1{
     font-size: 2rem;
   }
@@ -118,6 +117,10 @@ h1 {
   border-bottom: 1px solid  rgb(100, 100, 100);
 }
 
+.navBrand {
+  font-family: Raleway, sans-serif;
+}
+
 /********************** sections **********************/
 .mySection {
   padding: 5rem 0rem;
@@ -155,27 +158,35 @@ h1 {
 
 /*********************** home ************************/
 #homeCover {
-  margin-top: 55px;
-  margin-bottom: 55px;
+  margin: 80px 0 80px 0;
+  display: flex;
   text-align: center;
-  /* display: flex; */
-  position: relative;
-  line-height: 1;
-  color:black;
-  font-size: 2.5em;
-  font-family: Raleway, sans-serif;
+  justify-content: center;
+  /* align-items: center; */
   /* white-space: pre; */
 
 }
 
-#textAnimation span {
-  display: inline-block;
-  opacity: 0;
-  transform: scale(0);
-  animation: fadeIn 2.0s forwards;
+.animationText {
+  position: relative;
+  display: flex;
+  line-height: 1;
+  color:black;
+  font-size: 2.5em;
+  font-family: Raleway, sans-serif;
 }
 
-#textAnimation::before {
+.animationTextDarkMode{
+  color:#6ee1f5;
+}
+
+.animationText span {
+  opacity: 0;
+  transform: scale(0);
+  animation: fadeIn 1.5s forwards;
+}
+
+.animationText::before {
   position: absolute;
   content: "";
   width: 2px;
@@ -187,7 +198,7 @@ h1 {
   animation: toLeft 1.5s cubic-bezier(0.7, -0.6, 0.3, 1.5) forwards;
 }
 
-#textAnimation::after {
+.animationText::after {
   position: absolute;
   content: "";
   width: 2px;
@@ -208,7 +219,7 @@ h1 {
 
 @keyframes toLeft {
   to {
-    left: 38%;
+    left: -20%;
     opacity: 1;
     transform: scale(0.8);
   }
@@ -216,7 +227,7 @@ h1 {
 
 @keyframes toRight {
   to {
-    right: 38%;
+    right: -20%;
     opacity: 1;
     transform: scale(0.8);
   }
@@ -232,6 +243,10 @@ h1 {
   display: block;
   margin: 0 auto 20px auto;
   text-align: center;
+}
+
+#profileText {
+  margin: auto 0 auto 0;
 }
 
 #profile img {
@@ -253,15 +268,20 @@ h1 {
   border:1px solid  rgb(200, 200, 200);
 }
 
-.myCardDark {
+.myCardDarkMode {
   background-color: rgb(52, 58, 64);
   border:1px solid  rgb(100, 100, 100);
 
 }
 
-.card-footerDark {
+.card-footerDarkMode {
   background-color: rgb(44, 50, 56);
   border-top:1px solid  rgb(100, 100, 100);
+}
+
+.responsiveImg {
+  width: 100%;
+  height:auto;
 }
 
 /********************** footer **********************/

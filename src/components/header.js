@@ -50,8 +50,39 @@ class Header extends React.Component {
     document.querySelectorAll(".bgClass1").forEach(element => element.classList.toggle("DarkbgClass1"));
     document.querySelectorAll(".bgClass2").forEach(element => element.classList.toggle("DarkbgClass2"));
     document.querySelectorAll(".myIcon").forEach(element => element.classList.toggle("myIconDarkMode"));
-    document.querySelectorAll(".myCard").forEach(element => element.classList.toggle("myCardDark"));
-    document.querySelectorAll(".card-footer").forEach(element => element.classList.toggle("card-footerDark"));
+    document.querySelectorAll(".myCard").forEach(element => element.classList.toggle("myCardDarkMode"));
+    document.querySelectorAll(".card-footer").forEach(element => element.classList.toggle("card-footerDarkMode"));
+    
+    // DarkMode Toggle for Home 
+    let _animationText =  document.querySelector(".animationText");
+    _animationText.classList.toggle("animationTextDarkMode");
+    _animationText.childNodes.forEach(_span => _span.style.animation = 'none')
+    let styleElemBF = document.head.appendChild(document.createElement("style"));
+    let styleElemAF = document.head.appendChild(document.createElement("style"));
+    if (this.state.darkMode) {
+      styleElemBF.innerHTML = ".animationText::before {background: black; animation: none;}";
+      styleElemAF.innerHTML = ".animationText::after {background: black; animation: none;}";
+    } else {
+      styleElemBF.innerHTML = ".animationText::before {background: white; animation: none;}";
+      styleElemAF.innerHTML = ".animationText::after {background: white; animation: none;}";
+    }
+
+    // restart Animation
+    setTimeout(function(Mode) {
+      _animationText.childNodes.forEach((_span,i) => {
+        _span.style.animation = ''; // add back animation
+        let delay = 0.3 + Math.abs(i - 3) * 0.1; // add back animation delay
+        _span.style.animationDelay = `${delay}s`;
+      });
+      // add back animation for ::before and ::after element
+      if (Mode) {
+        styleElemBF.innerHTML = ".animationText::before {background: black; animation:'';}";
+        styleElemAF.innerHTML = ".animationText::after {background: black; animation:'';}";
+      } else {
+        styleElemBF.innerHTML = ".animationText::before {background: white; animation:'';}";
+        styleElemAF.innerHTML = ".animationText::after {background: white; animation:'';}";
+      }
+    }, 1, this.state.darkMode);
   };
 
   renderToggleIcon() {
@@ -86,7 +117,7 @@ class Header extends React.Component {
     return (
       <Navbar collapseOnSelect expand="md" bg="light" variant="light" sticky="top" className="navbarBorder-light">
         <Container>
-          <Navbar.Brand href="/">r0bertLiu</Navbar.Brand>
+          <Navbar.Brand href="/" className="navBrand">r0bertLiu</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" children={this.renderToggleIcon()}  onClick={() => this.onNavbarToggleClick()} />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ml-auto" onSelect={this.handleNavSelect}>

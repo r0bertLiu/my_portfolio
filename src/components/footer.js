@@ -17,7 +17,9 @@ class Footer extends React.Component {
               <i className="material-icons myIcon">expand_less</i>
             </button>
           </p>
-          
+          <div>
+            Pictures Source: https://unsplash.com/
+          </div>
         </footer>
       </Container>
     );
