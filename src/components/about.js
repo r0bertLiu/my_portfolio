@@ -17,10 +17,11 @@ class About extends React.Component {
       <div id="profileText">
         <h1>About</h1>
         <div>
-          I'm Yubai a graduate from UNSW master of IT major in Artificial Intelligence. 
-          I have achieved good average grade and High Distinction grade in my final 
-          graduation project. I also interested in front-end development and web design.
-          Currently, I'm residing in Australia and have great interested in finding a career in Sydney.
+          I'm Yubai a junior developer graduated from UNSW with degree of Master of IT major 
+          in Artificial Intelligence. I have achieved good average grade and High Distinction 
+          grade in my final graduation project. I also interested in front-end development and 
+          web design. Currently, I'm residing in Australia and have great interested in finding 
+          a career in Sydney.
         </div>
       </div>
     );

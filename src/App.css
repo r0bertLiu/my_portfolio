@@ -118,7 +118,8 @@ h1 {
 }
 
 .navBrand {
-  font-family: Raleway, sans-serif;
+  font-family: Orbitron, sans-serif;
+  font-size: 1.5rem;
 }
 
 /********************** sections **********************/
@@ -254,6 +255,7 @@ h1 {
   height: 200px;
   border-radius: 50%;
   object-fit: cover;
+  box-shadow: 10px 10px 30px -10px black;
 }
 
 /********************** Project **********************/
@@ -266,11 +268,17 @@ h1 {
 .myCard {
   background-color: rgb(255, 255, 255);
   border:1px solid  rgb(200, 200, 200);
+  box-shadow: 10px 10px 30px -10px grey;
 }
+
+/* .myCard:hover {
+  box-shadow: 10px 10px 15px -10px rgb(100, 100, 100);
+} */
 
 .myCardDarkMode {
   background-color: rgb(52, 58, 64);
   border:1px solid  rgb(100, 100, 100);
+  box-shadow: 10px 10px 30px -10px black;
 
 }
 

@@ -52,22 +52,26 @@ class Header extends React.Component {
     document.querySelectorAll(".myIcon").forEach(element => element.classList.toggle("myIconDarkMode"));
     document.querySelectorAll(".myCard").forEach(element => element.classList.toggle("myCardDarkMode"));
     document.querySelectorAll(".card-footer").forEach(element => element.classList.toggle("card-footerDarkMode"));
-    
+
     // DarkMode Toggle for Home 
     let _animationText =  document.querySelector(".animationText");
     _animationText.classList.toggle("animationTextDarkMode");
     _animationText.childNodes.forEach(_span => _span.style.animation = 'none')
     let styleElemBF = document.head.appendChild(document.createElement("style"));
     let styleElemAF = document.head.appendChild(document.createElement("style"));
+    let styleElemHerfLink = document.head.appendChild(document.createElement("style"));
+
     if (this.state.darkMode) {
       styleElemBF.innerHTML = ".animationText::before {background: black; animation: none;}";
       styleElemAF.innerHTML = ".animationText::after {background: black; animation: none;}";
+      styleElemHerfLink.innerHTML = "a {color: #007bff;}"
     } else {
       styleElemBF.innerHTML = ".animationText::before {background: white; animation: none;}";
       styleElemAF.innerHTML = ".animationText::after {background: white; animation: none;}";
+      styleElemHerfLink.innerHTML = "a {color: #6ee1f5;}"
     }
 
-    // restart Animation
+    // restart home Text Animation
     setTimeout(function(Mode) {
       _animationText.childNodes.forEach((_span,i) => {
         _span.style.animation = ''; // add back animation
